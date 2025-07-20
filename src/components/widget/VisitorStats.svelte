@@ -12,8 +12,8 @@
   let loading = true;
   let error = null;
   let retryCount = 0;
-  const maxRetries = 2;
-  const timeout = 5000; // 5秒超时
+  const maxRetries = 1; // 减少重试次数
+  const timeout = 3000; // 减少超时时间到3秒
 
   async function fetchStats() {
     try {
@@ -22,7 +22,14 @@
       const timeoutId = setTimeout(() => controller.abort(), timeout);
       
       const response = await fetch('https://um-api.fis.ink/blog/', {
-        signal: controller.signal
+        signal: controller.signal,
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        // 添加缓存控制
+        cache: 'no-cache'
       }).catch(err => {
         console.error('Fetch请求失败:', err);
         throw err;
@@ -32,7 +39,7 @@
       
       if (!response.ok) {
         console.error('API响应异常:', response.status, response.statusText);
-        throw new Error(`API响应异常: ${response.status} ${response.statusText}`);
+        throw new Error(`API响应异常: ${response.status}`);
       }
       
       const data = await response.json().catch(err => {
@@ -42,21 +49,27 @@
       
       console.log('成功获取访问统计数据:', data);
       stats = data;
+      error = null; // 清除错误状态
     } catch (err) {
       console.error('获取访问统计数据错误:', err);
       
       if (err.name === 'AbortError') {
-        error = new Error('请求超时，API响应时间过长');
-      } else if (err.message.includes('Failed to fetch')) {
-        error = new Error('无法连接到统计服务器');
+        error = new Error('请求超时');
+      } else if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+        error = new Error('网络连接失败');
+      } else if (err.message.includes('API响应异常')) {
+        error = new Error('服务暂时不可用');
       } else {
-        error = err;
+        error = new Error('加载失败');
       }
       
+      // 只在第一次失败时重试
       if (retryCount < maxRetries) {
         retryCount++;
         console.log(`准备第 ${retryCount} 次重试...`);
-        return fetchStats();
+        // 延迟重试
+        setTimeout(() => fetchStats(), 1000);
+        return;
       }
     } finally {
       loading = false;
@@ -67,15 +80,15 @@
   onMount(() => {
     fetchStats();
     
-    // 确保无论如何都会在10秒后停止加载状态
+    // 确保在5秒后停止加载状态
     setTimeout(() => {
       if (loading) {
         loading = false;
         if (!error) {
-          error = new Error('加载超时，请稍后刷新页面重试');
+          error = new Error('加载超时');
         }
       }
-    }, 10000);
+    }, 5000);
   });
 </script>
 
@@ -96,19 +109,19 @@
         </div>
       </div>
     {:else if error}
-      <div class="text-sm text-red-500 py-2">
-        <div class="flex items-center justify-center">
+      <div class="text-sm py-2">
+        <div class="flex items-center justify-center text-gray-500 dark:text-gray-400">
           <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          {error.message}
+          统计服务暂时不可用
         </div>
-        <div class="text-center mt-1">
+        <div class="text-center mt-2">
           <button 
-            class="text-xs text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            class="text-xs px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors"
             on:click={() => { loading = true; error = null; retryCount = 0; fetchStats(); }}
           >
-            点击重试
+            重新加载
           </button>
         </div>
       </div>

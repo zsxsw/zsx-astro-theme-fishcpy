@@ -1,16 +1,17 @@
 ---
 interface Props {
-  path: string;
+	path: string;
 }
 
-import { commentConfig } from '@/config'
+import { commentConfig } from "@/config";
 
 const config = {
-  el: "#twikoo",
-  path: Astro.props.path,
-  envId: commentConfig.twikoo?.envId,
-  lang: commentConfig.twikoo?.lang || 'zh-CN',
-  region: commentConfig.twikoo?.region,
+	el: "#twikoo",
+	path: Astro.props.path,
+	envId: commentConfig.twikoo?.envId,
+	lang: commentConfig.twikoo?.lang || "zh-CN",
+	region: commentConfig.twikoo?.region,
+	visitor: true, // 启用访问统计
 };
 ---
 
