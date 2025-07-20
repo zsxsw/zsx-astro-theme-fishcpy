@@ -1,10 +1,10 @@
 import type {
+	CommentConfig,
 	ExpressiveCodeConfig,
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
 	SiteConfig,
-	CommentConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
@@ -19,6 +19,7 @@ export const siteConfig: SiteConfig = {
 	banner: {
 		enable: true,
 		src: "https://cdn.fishcpy.top/img/2025/05/05/68182abdc7d6e.png", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
+		//背景在src\layouts\Layout.astro中
 		position: "center", // 等同于CSS的object-position属性，仅支持'top','center','bottom'。默认为'center'
 		credit: {
 			enable: false, // 是否显示横幅图片的版权信息
@@ -97,7 +98,8 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-  twikoo: {
-    envId: 'https://fishcpy-cloud-twkioo-1-2-3-4-5-6-7-8-9-10-11-12-13.fis.ink/',
-  },
-}
+	twikoo: {
+		envId:
+			"https://fishcpy-cloud-twkioo-1-2-3-4-5-6-7-8-9-10-11-12-13.fis.ink/",
+	},
+};
