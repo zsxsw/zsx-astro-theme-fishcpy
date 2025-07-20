@@ -73,9 +73,9 @@ const bannerOffset =
 ---
 
 <!DOCTYPE html>
-<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]"
+<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px] bg-cover bg-center bg-no-repeat bg-fixed"
 	  data-overlayscrollbars-initialize
-	  style="background-image: url('https://cdn.fishcpy.top/img/2025/07/20/687cc9ea0e25d.png'); background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat;"
+	  style="background-image: url('https://cdn.fishcpy.top/img/2025/07/20/687cc9ea0e25d.png')"
 >
 	<head>
 
@@ -153,6 +153,7 @@ const bannerOffset =
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
 	>
+		<div class="fixed inset-0 backdrop-blur-md bg-black/30 z-[-1]"></div>
 		<ConfigCarrier></ConfigCarrier>
 		<slot />
 
