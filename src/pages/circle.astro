@@ -7,7 +7,25 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
 <MainGridLayout title={i18n(I18nKey.friendsCircle)} description={i18n(I18nKey.friendsCircle)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
-            <h1 class="text-4xl font-bold mb-6 text-neutral-900 dark:text-white">{i18n(I18nKey.friendsCircle)}</h1>
+            <div class="flex items-center justify-between mb-6">
+                <h1 class="text-4xl font-bold text-neutral-900 dark:text-white">{i18n(I18nKey.friendsCircle)}</h1>
+                <button id="refresh-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <svg id="refresh-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                    <span>{i18n(I18nKey.refresh)}</span>
+                </button>
+            </div>
+            
+            <!-- 提示信息 -->
+            <div class="mb-6 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <div class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p class="text-sm text-blue-700 dark:text-blue-300">{i18n(I18nKey.refreshTip)}</p>
+                </div>
+            </div>
             
             <!-- 统计信息卡片 -->
             <div id="stats-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -232,6 +250,9 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
         
         isLoading = true;
         showLoading();
+        
+        // 更新刷新按钮状态
+        updateRefreshButtonState(true);
 
         const data = await fetchFriendsCircleData();
         
@@ -245,6 +266,26 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
         }
         
         isLoading = false;
+        updateRefreshButtonState(false);
+    }
+
+    function updateRefreshButtonState(loading: boolean) {
+        const refreshBtn = document.getElementById('refresh-btn');
+        const refreshIcon = document.getElementById('refresh-icon');
+        
+        if (refreshBtn && refreshIcon) {
+            refreshBtn.disabled = loading;
+            if (loading) {
+                refreshIcon.classList.add('animate-spin');
+            } else {
+                refreshIcon.classList.remove('animate-spin');
+            }
+        }
+    }
+
+    function forceRefresh() {
+        // 强制刷新页面
+        window.location.reload();
     }
 
     function initializePage() {
@@ -254,6 +295,12 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
         const retryBtn = document.getElementById('retry-btn');
         if (retryBtn) {
             retryBtn.addEventListener('click', loadData);
+        }
+        
+        // 绑定刷新按钮事件
+        const refreshBtn = document.getElementById('refresh-btn');
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', forceRefresh);
         }
         
         hasInitialized = true;

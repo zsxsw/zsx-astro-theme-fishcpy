@@ -43,6 +43,8 @@ enum I18nKey {
 	loadError = "loadError",
 	retry = "retry",
 	noArticles = "noArticles",
+	refresh = "refresh",
+	refreshTip = "refreshTip",
 }
 
 export default I18nKey;

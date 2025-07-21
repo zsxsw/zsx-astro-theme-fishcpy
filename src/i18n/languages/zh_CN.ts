@@ -46,4 +46,6 @@ export const zh_CN: Translation = {
 	[Key.loadError]: "加载失败",
 	[Key.retry]: "重试",
 	[Key.noArticles]: "暂无文章",
+	[Key.refresh]: "刷新",
+	[Key.refreshTip]: "如果长时间加载不出来，请尝试刷新页面",
 };
