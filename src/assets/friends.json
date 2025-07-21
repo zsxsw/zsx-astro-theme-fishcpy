@@ -5,7 +5,8 @@
 		"desc": "获取友链的最新动态",
 		"siteurl": "/circle/",
 		"category": "导航",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": false
 	},
 	{
 		"title": "张洪Heo",
@@ -13,7 +14,8 @@
 		"desc": "分享设计与科技生活",
 		"siteurl": "https://blog.zhheo.com",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "梦爱吃鱼",
@@ -21,7 +23,8 @@
 		"desc": "但愿日子清静抬头遇见的满是柔情",
 		"siteurl": "https://blog.bsgun.cn/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Mo的记事簿",
@@ -29,7 +32,8 @@
 		"desc": "万年鸽王，哈哈OvO",
 		"siteurl": "https://blog.xiowo.net/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "宏尘极客",
@@ -37,7 +41,8 @@
 		"desc": "专注于技术知识和NAS笔记等内容分享",
 		"siteurl": "https://www.hcjike.com/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "bbb-lsy07",
@@ -45,7 +50,8 @@
 		"desc": "专注于技术知识和NAS笔记等内容分享",
 		"siteurl": "https://blog.6uu.us/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "秋实-Allenyou 的小窝",
@@ -53,7 +59,8 @@
 		"desc": "稻花香里说丰年，听取 WA 声一片",
 		"siteurl": "https://www.allenyou.wang/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "朽丘秋雨",
@@ -61,7 +68,8 @@
 		"desc": "一定会和喜欢的人在夏日夜晚牵手慢步",
 		"siteurl": "https://blog.koxiuqiu.cc/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "龙星划空",
@@ -69,7 +77,8 @@
 		"desc": "人生近看是悲剧，远看是喜剧",
 		"siteurl": "https://blog.245179.xyz/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "清羽飞扬",
@@ -77,7 +86,8 @@
 		"desc": "柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜",
 		"siteurl": "https://blog.liushen.fun/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "liuzhen932 的小窝",
@@ -85,7 +95,8 @@
 		"desc": "只要愿意去做，人无所不通",
 		"siteurl": "https://blog.liuzhen932.top/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "夜轻Blog",
@@ -93,7 +104,8 @@
 		"desc": "一个人",
 		"siteurl": "https://blog.yeqing.net/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "橙寻星球",
@@ -101,7 +113,8 @@
 		"desc": "人外有人，天外有天",
 		"siteurl": "https://cloudwl.com/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "光 · 昭",
@@ -109,7 +122,8 @@
 		"desc": "「あまねく奇跡の始発点」",
 		"siteurl": "https://www.pyrzo.com/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "熊猫の小窝",
@@ -117,7 +131,8 @@
 		"desc": "一个温暖的家/一只懒懒的熊猫",
 		"siteurl": "https://www.pysio.online/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "泯轲博客",
@@ -125,7 +140,8 @@
 		"desc": "咬咬稻草做动作，生活一点没烦恼！",
 		"siteurl": "https://xn--tiqr96eenfg8o0kp.cn/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Yeppioo",
@@ -133,7 +149,8 @@
 		"desc": "梦想成为庄稼地里的读书人.....",
 		"siteurl": "https://blog.yeppioo.vip/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "AcoFork",
@@ -141,7 +158,8 @@
 		"desc": "Protect What You Love!",
 		"siteurl": "https://www.afo.im/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "青序栈",
@@ -149,7 +167,8 @@
 		"desc": "青序成栈·向简而生",
 		"siteurl": "https://qxzhan.cn/",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Noah'blog",
@@ -157,7 +176,8 @@
 		"desc": "努力去发光，而不是被照亮",
 		"siteurl": "https://blog.noah0932.top",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Stanley的技术博客",
@@ -165,7 +185,8 @@
 		"desc": "🤓逸一时，误一世👌",
 		"siteurl": "https://lixvyao.com",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Welcome to - 小枫的Blog",
@@ -173,7 +194,8 @@
 		"desc": "这是一个致力于分享前后端技术的博客。同时也分享一些闲聊碎语",
 		"siteurl": "https://blog.zicheng.icu",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Pinpe 的云端",
@@ -181,7 +203,8 @@
 		"desc": "一个属于自己的云朵。",
 		"siteurl": "https://pinpe.top",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "幽默的小刘吖小栈",
@@ -189,15 +212,17 @@
 		"desc": "这里是幽默的小刘吖的小栈",
 		"siteurl": "https://lzch.top",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
-		"title": "AirTouch’s Blog",
+		"title": "AirTouch's Blog",
 		"imgurl": "https://blog.airtouch.top/avatar_full.webp",
 		"desc": "岩间琉璃云间月",
 		"siteurl": "https://blog.airtouch.top",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "或许是一只龙的博客",
@@ -205,7 +230,8 @@
 		"desc": "一只神秘小龙",
 		"siteurl": "https://497995.xyz",
 		"category": "博客",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "可耐的小伙纸",
@@ -213,7 +239,8 @@
 		"desc": "永远相信美好的事情即将发生",
 		"siteurl": "https://kndxhz.cn",
 		"category": "个人主页",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "zyh的个人站",
@@ -221,7 +248,8 @@
 		"desc": "Who is minecraft？",
 		"siteurl": "https://zyh666.dpdns.org",
 		"category": "个人主页",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "fishcpy cloud",
@@ -229,7 +257,8 @@
 		"desc": "fishcpy cloud",
 		"siteurl": "https://www.fis.ink",
 		"category": "赞助商",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "Astro",
@@ -237,7 +266,8 @@
 		"desc": "本站框架",
 		"siteurl": "https://github.com/withastro/astro",
 		"category": "框架&主题",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	},
 	{
 		"title": "fuwari",
@@ -245,6 +275,7 @@
 		"desc": "本站主题",
 		"siteurl": "https://github.com/saicaca/fuwari",
 		"category": "框架&主题",
-		"tags": [""]
+		"tags": [""],
+		"openInNewTab": true
 	}
 ]
