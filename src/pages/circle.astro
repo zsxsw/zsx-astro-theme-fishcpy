@@ -39,6 +39,9 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
             <div id="loading" class="text-center py-8">
                 <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
                 <div class="mt-2 text-neutral-600 dark:text-neutral-400">{i18n(I18nKey.loading)}</div>
+                <div class="mt-4 text-sm text-neutral-500 dark:text-neutral-500">
+                    如果长时间加载不出来，请尝试刷新页面
+                </div>
             </div>
 
             <!-- 错误状态 -->
