@@ -3,7 +3,7 @@
 		"title": "朋友圈",
 		"imgurl": "https://www.fis.ink/img/logo.png",
 		"desc": "获取友链的最新动态",
-		"siteurl": "/circle/",
+		"siteurl": "https://blog.fis.ink/circle/",
 		"category": "导航",
 		"tags": [""],
 		"openInNewTab": false
