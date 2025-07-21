@@ -252,6 +252,15 @@
 		"openInNewTab": true
 	},
 	{
+		"title": "笑笑API",
+		"imgurl": "https://www.fis.ink",
+		"desc": "笑笑API",
+		"siteurl": "https://api.k9b.cn/",
+		"category": "其他",
+		"tags": [""],
+		"openInNewTab": true
+	},
+	{
 		"title": "fishcpy cloud",
 		"imgurl": "https://www.fis.ink/img/logo.png",
 		"desc": "fishcpy cloud",
