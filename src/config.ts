@@ -18,7 +18,7 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "https://cdn.fishcpy.top/img/2025/05/05/68182abdc7d6e.png", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
+		src: "https://api.fis.ink/mc", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
 		//背景在src\layouts\Layout.astro中
 		position: "center", // 等同于CSS的object-position属性，仅支持'top','center','bottom'。默认为'center'
 		credit: {
