@@ -33,6 +33,7 @@ enum I18nKey {
 	publishedAt = "publishedAt",
 	license = "license",
 	friends = "friends",
+	circle = "circle",
 	friendsCircle = "friendsCircle",
 	friendsNum = "friendsNum",
 	activeNum = "activeNum",

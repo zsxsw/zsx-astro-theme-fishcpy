@@ -36,6 +36,7 @@ export const zh_CN: Translation = {
 	[Key.publishedAt]: "发布于",
 	[Key.license]: "许可协议",
 	[Key.friends]: "友链",
+	[Key.circle]: "朋友圈",
 	[Key.friendsCircle]: "朋友圈",
 	[Key.friendsNum]: "友链数量",
 	[Key.activeNum]: "活跃数量",

@@ -1,14 +1,5 @@
 [
 	{
-		"title": "朋友圈",
-		"imgurl": "https://www.fis.ink/img/logo.png",
-		"desc": "获取友链的最新动态",
-		"siteurl": "https://blog.fis.ink/circle/",
-		"category": "导航",
-		"tags": [""],
-		"openInNewTab": false
-	},
-	{
 		"title": "张洪Heo",
 		"imgurl": "https://bu.dusays.com/2022/12/28/63ac2812183aa.png",
 		"desc": "分享设计与科技生活",

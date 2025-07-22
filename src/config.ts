@@ -46,6 +46,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.Friends,
+		LinkPreset.Moments,
 		LinkPreset.About,
 		{
 			name: "开往",

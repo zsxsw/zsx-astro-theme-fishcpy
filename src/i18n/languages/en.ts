@@ -36,6 +36,7 @@ export const en: Translation = {
 	[Key.publishedAt]: "Published at",
 	[Key.license]: "License",
 	[Key.friends]: "Friends",
+	[Key.circle]: "Circle",
 	[Key.friendsCircle]: "Friends Circle",
 	[Key.friendsNum]: "Friends Count",
 	[Key.activeNum]: "Active Count",
