@@ -24,24 +24,17 @@ jobs:
         with:
           node-version: '20'
           
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+          run_install: false
+          
       - name: Install dependencies
-        run: |
-          if [ -f "package-lock.json" ]; then
-            npm ci
-          elif [ -f "yarn.lock" ]; then
-            yarn install --frozen-lockfile
-          elif [ -f "pnpm-lock.yaml" ]; then
-            npm install -g pnpm
-            pnpm install --frozen-lockfile
-          else
-            npm install
-          fi
+        run: pnpm install --frozen-lockfile
       
       - name: Build site
-        run: |
-          if [ -f "package.json" ]; then
-            npm run build
-          fi
+        run: pnpm run build
       
       - name: Deploy to blog branch
         uses: JamesIves/github-pages-deploy-action@v4
