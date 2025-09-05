@@ -1,0 +1,114 @@
+---
+import { profileConfig } from "../config";
+import { url } from "../utils/url-utils";
+
+const currentYear = new Date().getFullYear();
+---
+
+<div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div>
+<div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
+    <div class="flex flex-col items-center gap-2">
+        <div class="text-center">
+            <a href="https://beian.miit.gov.cn" target="_blank" class="transition link text-[var(--primary)] font-medium text-base">京ICP备2025138063号</a>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-2">
+            <a href="https://hopedomain.com/zh/age/fis.ink" target="_blank">
+                <img src="https://hopedomain.com/api/badge/domain-age/fis.ink?theme=spotify&lang=zh" alt="域名年龄" />
+            </a>
+            <a href="https://ipw.cn/ssl/?site=blog.fis.ink" title="本站支持SSL安全访问" target="_blank">
+                <img style="display:inline-block;vertical-align:middle" alt="本站支持SSL安全访问" src="https://static.ipw.cn/icon/ssl-s1.svg" />
+            </a>
+        </div>
+
+        <div id="runtime_span" class="text-xs text-neutral-600 dark:text-neutral-400"></div>
+        
+        <!-- 版权和基础信息 -->
+        <div class="transition text-neutral-600 dark:text-neutral-400 text-sm text-center mt-4">
+            &copy; 2024-<span id="copyright-year">{currentYear}</span> {profileConfig.name}. All Rights Reserved. /
+            <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('rss.xml')}>RSS</a> /
+            <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a><br>
+            Powered by
+            <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
+            <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/fishcpy/astro-theme-fishcpy">fishcpy Theme</a><br>
+            Server by
+            <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://edgeone.ai">Tencent EO Pages</a> &
+            <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://www.cloudflare.com">Cloudflare Pages</a><br>
+            <div id="performance_info" class="text-xs text-neutral-600 dark:text-neutral-400 mt-1"></div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+// 全局运行时间管理
+window.footerRuntime = window.footerRuntime || {
+    interval: null,
+    startDate: new Date("9/6/2024 00:00:00")
+};
+
+function show_runtime() {
+    const X = window.footerRuntime.startDate;
+    const Y = new Date();
+    const T = (Y.getTime() - X.getTime());
+    const M = 24 * 60 * 60 * 1000;
+    const a = T / M;
+    const A = Math.floor(a);
+    const b = (a - A) * 24;
+    const B = Math.floor(b);
+    const c = (b - B) * 60;
+    const C = Math.floor(c);
+    const D = Math.floor((c - C) * 60);
+    const runtime_span = document.getElementById("runtime_span");
+    if (runtime_span) {
+        runtime_span.innerHTML = "本站已运行 " + A + " 天 " + B + " 小时 " + C + " 分钟 " + D + " 秒";
+    }
+}
+
+function initFooter() {
+    // 清除之前的定时器
+    if (window.footerRuntime.interval) {
+        clearInterval(window.footerRuntime.interval);
+    }
+    
+    const startTime = performance.now();
+    
+    function updatePerformanceInfo() {
+        const loadTime = (performance.now() - startTime).toFixed(2);
+        const memoryInfo = performance.memory ? 
+            `内存使用: ${(performance.memory.usedJSHeapSize / 1024 / 1024).toFixed(2)}MB` : 
+            '';
+        
+        const performanceElement = document.getElementById('performance_info');
+        if (performanceElement) {
+            performanceElement.innerHTML = `页面加载耗时: ${loadTime}ms ${memoryInfo ? '| ' + memoryInfo : ''}`;
+        }
+    }
+    
+    // 立即显示运行时间和性能信息
+    show_runtime();
+    updatePerformanceInfo();
+    
+    // 设置新的定时器
+    window.footerRuntime.interval = setInterval(show_runtime, 1000);
+}
+
+// 页面加载时初始化
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFooter);
+} else {
+    initFooter();
+}
+
+// Swup 页面切换支持
+const setupFooterSwupHooks = () => {
+    if (window.swup && window.swup.hooks) {
+        window.swup.hooks.on('page:view', initFooter);
+    }
+};
+
+if (window.swup) {
+    setupFooterSwupHooks();
+} else {
+    document.addEventListener('swup:enable', setupFooterSwupHooks);
+}
+</script>

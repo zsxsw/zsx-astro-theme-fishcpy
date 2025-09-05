@@ -1,0 +1,20 @@
+[
+	{
+		"title": "fishcpy主题",
+		"imgurl": "https://www.fis.ink/img/logo.png",
+		"desc": "非淡泊无以明志，非宁静无以致远",
+		"siteurl": "https://blog.fis.ink",
+		"category": "博客",
+		"tags": [""],
+		"openInNewTab": true
+	},
+	{
+		"title": "fishcpy的主页",
+		"imgurl": "https://www.fis.ink/img/logo.png",
+		"desc": "AWA",
+		"siteurl": "https://www.fis.ink",
+		"category": "主页",
+		"tags": [""],
+		"openInNewTab": true
+	}
+]
