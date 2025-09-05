@@ -127,6 +127,8 @@ const backgroundStyle = pageBackgroundConfig.enable
 			// Load the theme from config or local storage
 			const isThemeForced = configTheme === LIGHT_MODE || configTheme === DARK_MODE;
 			const theme = isThemeForced ? configTheme : (localStorage.getItem('theme') || DEFAULT_THEME);
+			
+			// Apply theme based on user's choice, not system preference unless in AUTO_MODE
 			switch (theme) {
 				case LIGHT_MODE:
 					document.documentElement.classList.remove('dark');
@@ -140,6 +142,7 @@ const backgroundStyle = pageBackgroundConfig.enable
 					} else {
 						document.documentElement.classList.remove('dark');
 					}
+					break
 			}
 
 			// Load the hue from local storage

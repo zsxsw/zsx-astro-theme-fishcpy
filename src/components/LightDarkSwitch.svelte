@@ -21,7 +21,10 @@ onMount(() => {
 	const changeThemeWhenSchemeChanged: Parameters<
 		typeof darkModePreference.addEventListener<"change">
 	>[1] = (_e) => {
-		applyThemeToDocument(mode);
+		// Only apply theme changes when in AUTO_MODE
+		if (mode === AUTO_MODE) {
+			applyThemeToDocument(mode);
+		}
 	};
 	darkModePreference.addEventListener("change", changeThemeWhenSchemeChanged);
 	return () => {
