@@ -29,7 +29,7 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://blog.fis.ink/",
+	site: "https://fishcpy-theme.demo.fis.ink/",
 	base: "/",
 	trailingSlash: "always",
 
