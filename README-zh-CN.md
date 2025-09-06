@@ -48,5 +48,3 @@
 基于 [Fuwari](https://github.com/saicaca/fuwari) 修改而来。
 
 [![FOSSA 状态](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaicaca%2Ffuwari.svg? type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaicaca%2Ffuwari?ref=badge_large&issueType=license)
-
-通过DeepL.com（免费版）翻译
