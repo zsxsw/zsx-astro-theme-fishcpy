@@ -4,7 +4,7 @@
 
 > A static blog template built with [Astro](https://astro.build), modified from [Fuwari](https://github.com/saicaca/fuwari).
 
-[**🖥️ Live Demo **](https://fishcpy-theme.demo.fis.ink)
+[**🖥️ Live Demo **](https://blog.fis.ink)
 
 ![Preview Image](https://cdn.fis.ink/cdn/2025/09/06/68bb1a79306d1.webp)
 
