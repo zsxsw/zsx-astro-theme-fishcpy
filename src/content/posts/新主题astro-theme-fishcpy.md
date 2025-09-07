@@ -1,7 +1,7 @@
 ---
 title: 新主题astro-theme-fishcpy
 published: 2025-09-06
-description: 更新至新系统版本后，整体体验有明显提升：动画更流畅、发热情况改善、应用切换更加顺畅。本文分享实际使用感受。
+description: 今天是网站一周年！fishcpy主题基于Astro与TailwindCSS，由Fuwari修改而来，支持暗色模式、响应式设计、Pagefind静态搜索（低带宽、零配置）、Markdown扩展、目录、RSS及Twikoo/Artalk评论。
 image: https://cdn.fis.ink/cdn/2025/09/06/68bb1a79306d1.webp
 tags: [主题]
 category: 主题
