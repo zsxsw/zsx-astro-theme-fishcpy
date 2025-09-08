@@ -324,6 +324,15 @@
 		"openInNewTab": true
 	},
 	{
+		"title": "青稚の空间",
+		"imgurl": "https://blog.linux-qitong.top/img/avatar.webp",
+		"desc": "越努力，越幸运.",
+		"siteurl": "https://blog.linux-qitong.top",
+		"category": "博客",
+		"tags": [""],
+		"openInNewTab": true
+	},
+	{
 		"title": "可耐的小伙纸",
 		"imgurl": "https://kndxhz.cn/images/b_2ba0f0b166b43ef17e4f147b782418b0.webp",
 		"desc": "永远相信美好的事情即将发生",
@@ -369,10 +378,10 @@
 		"openInNewTab": true
 	},
 	{
-		"title": "fuwari",
-		"imgurl": "https://avatars.githubusercontent.com/u/44914786?s=48&v=4",
+		"title": "fishcpy theme",
+		"imgurl": "https://www.fis.ink/img/logo.png",
 		"desc": "本站主题",
-		"siteurl": "https://github.com/saicaca/fuwari",
+		"siteurl": "https://github.com/fishcpy/astro-theme-fishcpy",
 		"category": "框架&主题",
 		"tags": [""],
 		"openInNewTab": true
