@@ -11,18 +11,19 @@
 }
 
 /* 自定义鼠标样式 - 仅在桌面端显示 */
+/* 通过 body 上的 data-cursor-override 属性来控制是否覆盖默认鼠标样式 */
 @media (hover: hover) and (pointer: fine) {
-    /* 浅色模式使用深色鼠标 */
-    *, 
-    a, 
-    p {
+    /* 当启用覆盖模式时，浅色模式使用深色鼠标 */
+    body[data-cursor-override="true"] *, 
+    body[data-cursor-override="true"] a, 
+    body[data-cursor-override="true"] p {
         cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='10px' height='10px'><circle cx='4' cy='4' r='4' fill='black' /></svg>") 4 4, auto !important;
     }
     
-    /* 深色模式使用浅色鼠标 */
-    .dark *, 
-    .dark a, 
-    .dark p {
+    /* 当启用覆盖模式时，深色模式使用浅色鼠标 - dark类在html元素上 */
+    html.dark body[data-cursor-override="true"] *, 
+    html.dark body[data-cursor-override="true"] a, 
+    html.dark body[data-cursor-override="true"] p {
         cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='10px' height='10px'><circle cx='4' cy='4' r='4' fill='white' /></svg>") 4 4, auto !important;
     }
 }
@@ -33,8 +34,8 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    /* 浅色模式使用深色跟随元素 */
-    #g-pointer-2 {
+    /* 当启用覆盖模式时，浅色模式使用深色跟随元素 */
+    body[data-cursor-override="true"] #g-pointer-2 {
         position: fixed;
         top: 0;
         left: 0;
@@ -48,9 +49,14 @@
         transform: translate(-50%, -50%);
     }
     
-    /* 深色模式使用浅色跟随元素 */
-    .dark #g-pointer-2 {
+    /* 当启用覆盖模式时，深色模式使用浅色跟随元素 - dark类在html元素上 */
+    html.dark body[data-cursor-override="true"] #g-pointer-2 {
         background: rgba(255, 255, 255, 0.25);
+    }
+    
+    /* 当未启用覆盖模式时，隐藏跟随元素 */
+    body[data-cursor-override="false"] #g-pointer-2 {
+        display: none !important;
     }
 }
 

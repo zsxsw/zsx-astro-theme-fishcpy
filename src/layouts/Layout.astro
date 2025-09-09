@@ -5,7 +5,7 @@ import "@fontsource/roboto/700.css";
 
 import ConfigCarrier from "@components/ConfigCarrier.astro";
 import TitleBeautify from "@components/TitleBeautify.astro";
-import { cardConfig, profileConfig, siteConfig } from "@/config";
+import { cardConfig, cursorConfig, profileConfig, siteConfig } from "@/config";
 import {
 	AUTO_MODE,
 	BANNER_HEIGHT,
@@ -181,6 +181,7 @@ const backgroundStyle = pageBackgroundConfig.enable
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
+		  data-cursor-override={cursorConfig.overrideDefault ? "true" : "false"}
 	>
 		<!-- 鼠标跟随效果元素 -->
 		<div id="g-pointer-1"></div>

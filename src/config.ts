@@ -314,3 +314,14 @@ export const beautifyConfig: BeautifyConfig = {
 		h6: "0.66rem",
 	},
 };
+
+// ----------------------------------------------------------
+
+// 鼠标样式配置
+export const cursorConfig = {
+	overrideDefault: true, // 是否覆盖访问者系统默认鼠标样式 (false=尊重用户设置, true=强制覆盖)
+};
+
+// 使用说明：
+// - false (推荐): 尊重访问者的系统鼠标设置，不强制覆盖
+// - true: 强制覆盖访问者的默认鼠标样式为自定义样式

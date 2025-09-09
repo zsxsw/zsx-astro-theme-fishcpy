@@ -179,3 +179,8 @@ export type BeautifyConfig = {
 		h6: string;
 	};
 };
+
+// 鼠标样式配置
+export const cursorConfig = {
+	overrideDefault: true, // 是否覆盖访问者系统默认鼠标样式 (false=尊重用户设置, true=强制覆盖)
+};
