@@ -180,6 +180,24 @@ export type BeautifyConfig = {
 	};
 };
 
+export type SidebarConfig = {
+	enable: boolean; // 侧边栏总开关，控制整个侧边栏是否显示
+	cards: {
+		profile: boolean; // 个人资料卡片
+		categories: boolean; // 分类卡片
+		tags: boolean; // 标签卡片
+		hitokoto: boolean; // 一言卡片
+		advertisement: boolean; // 广告卡片
+	};
+	advertisement: {
+		src: string; // 广告图片链接
+		url: string; // 广告跳转链接
+		alt: string; // 图片alt文本
+		showLabel: boolean; // 是否显示广告标识
+		labelText: string; // 广告标识文本
+	};
+};
+
 // 鼠标样式配置
 export const cursorConfig = {
 	overrideDefault: true, // 是否覆盖访问者系统默认鼠标样式 (false=尊重用户设置, true=强制覆盖)

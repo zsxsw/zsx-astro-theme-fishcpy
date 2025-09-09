@@ -6,6 +6,7 @@ import type {
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
+	SidebarConfig,
 	SiteConfig,
 } from "./types/config";
 
@@ -325,3 +326,24 @@ export const cursorConfig = {
 // 使用说明：
 // - false (推荐): 尊重访问者的系统鼠标设置，不强制覆盖
 // - true: 强制覆盖访问者的默认鼠标样式为自定义样式
+
+// ----------------------------------------------------------
+
+// 侧边栏配置
+export const sidebarConfig: SidebarConfig = {
+	enable: true, // 侧边栏总开关，控制整个侧边栏是否显示
+	cards: {
+		profile: true, // 个人资料卡片
+		categories: true, // 分类卡片
+		tags: true, // 标签卡片
+		hitokoto: true, // 一言卡片
+		advertisement: true, // 广告卡片
+	},
+	advertisement: {
+		src: "https://cdn.fis.ink/img/2025/04/19/680346cf235f8.png", // 广告图片链接
+		url: "https://cloud.zyidc.net/aff/MYIMKXBB", // 广告跳转链接
+		alt: "广告", // 图片alt文本
+		showLabel: true, // 是否显示广告标识
+		labelText: "广告", // 广告标识文本
+	},
+};
