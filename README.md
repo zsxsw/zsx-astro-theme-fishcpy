@@ -1,50 +1,46 @@
-# 🐟 fishcpy theme
+# 🐟 fishcpy 主题
 ![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
 ![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
 
-> A static blog template built with [Astro](https://astro.build), modified from [Fuwari](https://github.com/saicaca/fuwari).
+> 基于[Astro](https://astro.build)构建的静态博客模板，由[Fuwari](https://github.com/saicaca/fuwari)修改而来。
 
-[**🖥️ Live Demo **](https://blog.fis.ink)
+[**🖥️ 实时演示 **](https://blog.fis.ink)
 
-![Preview Image](https://cdn.fis.ink/cdn/2025/09/06/68bb1a79306d1.webp)
-
-🌏 README in  
-[**中文**](./README-zh-CN.md)   
-*(Provided by the community and may not always be up-to-date)*
+![预览图](https://cdn.fis.ink/cdn/2025/09/06/68bb1a79306d1.webp)
 
 ---
 
-## ✨ Features
+## ✨ 核心特性
 
-- [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
-- [x] Smooth animations and page transitions
-- [x] Light / dark mode
-- [x] Customizable theme colors & banner
-- [x] Responsive design
-- [x] Search functionality with [Pagefind](https://pagefind.app/)
-- [x] [Markdown extended features](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
-- [x] Table of contents
-- [x] RSS feed
-- [x] Twikoo and artalk comment sections
+- [x] 基于 [Astro](https://astro.build) 与 [Tailwind CSS](https://tailwindcss.com) 构建
+- [x] 流畅动画与页面过渡效果
+- [x] 浅色/深色模式
+- [x] 可自定义主题配色与横幅
+- [x] 响应式设计
+- [x] 搭载[Pagefind](https://pagefind.app/)的搜索功能
+- [x] [Markdown扩展功能](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
+- [x] 目录功能
+- [x] RSS订阅源
+- [x] Twikoo与artalk评论区
 
-## ⚡ Commands
+## ⚡ 命令列表
 
-| Command                    | Action                                              |
+| 命令                    | 操作                                              |
 |----------------------------|-----------------------------------------------------|
-| `pnpm install`             | Install dependencies                                |
-| `pnpm dev`                 | Start dev server at `localhost:4321`                |
-| `pnpm build`               | Build production site to `./dist/`                  |
-| `pnpm preview`             | Preview built site before deploying                 |
-| `pnpm check`               | Run code quality and type checks                    |
-| `pnpm format`              | Format code using Biome                             |
-| `pnpm new-post <filename>` | Create a new blog post                              |
-| `pnpm astro ...`           | Run Astro CLI commands (e.g., `astro add`)          |
-| `pnpm astro --help`        | Show Astro CLI help                                 |
+| `pnpm install`             | 安装依赖项                                |
+| `pnpm dev`                 | 在 `localhost:4321` 启动开发服务器                |
+| `pnpm build`               | 将生产站点构建至 `./dist/`                            |
+| `pnpm preview`             | 部署前预览构建站点                                |
+| `pnpm check`               | 运行代码质量与类型检查                                |
+| `pnpm format`              | 使用 Biome 格式化代码                             |
+| `pnpm new-post <文件名>` | 创建新博客文章                              |
+| `pnpm astro ...`           | 运行 Astro CLI 命令（例如 `astro add`）          |
+| `pnpm astro --help`        | 显示 Astro CLI 帮助                                 |
 
-## 📄 License
+## 📄 许可协议
 
-This project is licensed under the MIT License.
+本项目采用 MIT 许可协议授权。
 
-Modified from [Fuwari](https://github.com/saicaca/fuwari).
+基于 [Fuwari](https://github.com/saicaca/fuwari) 修改而来。
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsaicaca%2Ffuwari.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsaicaca%2Ffuwari?ref=badge_large&issueType=license)
+请完成必要的配置与修改后再部署项目，**不得使用“fishcpy”相关名称、Logo建立“镜像”网站或照搬文章内容而不标注来源**，否则我将设法与你联系。
