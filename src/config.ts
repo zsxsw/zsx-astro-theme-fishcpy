@@ -224,7 +224,7 @@ export const commentConfig: CommentConfig = {
 	},
 	artalk: {
 		server: "https://artalk.fis.ink",
-		site: "fishcpy的小破站",
+		site: "astro-theme-fishcpy",
 		darkMode: false, // 强制浅色模式，不跟随浏览器主题
 	},
 };
