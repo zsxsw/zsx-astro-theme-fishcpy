@@ -128,6 +128,11 @@ export const navBarConfig: NavBarConfig = {
 					icon: "material-symbols:photo-camera",
 				},
 				{
+					name: "微语",
+					url: "/memos/",
+					icon: "simple-line-icons:note",
+				},
+				{
 					name: "时间盒",
 					url: "/chronobox/",
 					icon: "fa6-solid:circle-play",
