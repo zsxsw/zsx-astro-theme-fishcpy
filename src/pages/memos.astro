@@ -1,0 +1,133 @@
+---
+import Comment from "@components/comment/index.astro";
+import { Icon } from "astro-icon/components";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+/* ===== 1. 拉取数据 ===== */
+const EDIT_URL = "https://github.com/zsxsw/github-issues-moments/issues/1";   // ← 改成你想跳转的编辑地址
+const API = "https://github-api.zhzsx.cn/api/comments";
+
+let essays: any[] = [];
+try {
+  const res = await fetch(API);
+  if (!res.ok) throw new Error("fetch fail");
+  const list: any[] = await res.json();
+
+  essays = list
+    .map((raw) => ({
+      id: raw.id,
+      content: raw.body || "",
+      time: new Date(raw.created_at).toLocaleString("zh-CN"),
+      images: (raw.body || "").match(/(https?:\/\/\S+\.(jpg|jpeg|png|gif|webp|svg))/gi) || [],
+      tags: (raw.body || "").match(/#(\S+)/g)?.map((t: string) => t.slice(1)) || [],
+    }))
+    .sort((a, b) => b.id - a.id);
+} catch (e) {
+  console.error("[essay] 拉取评论失败", e);
+}
+
+/* ===== 2. 评论区用到的 mockPost ===== */
+const mockPost = { slug: "essay", data: { title: "微语" } };
+---
+
+<MainGridLayout title="微语" description="记录生活中的美好瞬间">
+  <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 mb-8">
+    <div class="card-base z-10 px-9 py-6 relative w-full">
+      <!-- 标题 + 编辑按钮 -->
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-4xl font-bold text-neutral-900 dark:text-white">微语</h1>
+        <a
+          href={EDIT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-[var(--btn-card-bg-hover)] hover:bg-[var(--btn-card-bg-active)] transition-colors"
+          aria-label="发表新动态"
+        >
+          <Icon name="material-symbols:edit-outline" class="text-xl" />
+          <span class="hidden md:inline text-sm">写一条</span>
+        </a>
+      </div>
+      <p class="text-neutral-600 dark:text-neutral-400 mb-8">记录生活中的美好瞬间</p>
+
+      <!-- 内容列表 -->
+      <div class="space-y-6">
+        {essays.map((essay) => (
+          <div class="essay-item bg-[var(--card-bg)] rounded-lg p-6 shadow-sm border border-[var(--line-divider)] transition-all hover:shadow-md">
+            <!-- 文字 -->
+            <div class="essay-content text-90 text-lg leading-relaxed mb-4">{essay.content}</div>
+
+            <!-- 图片 -->
+            {essay.images.length > 0 && (
+              <div class="essay-images mb-4">
+                <div
+                  class:list={[
+                    "custom-md grid gap-3",
+                    essay.images.length === 1 ? "grid-cols-1" :
+                    essay.images.length === 2 ? "grid-cols-2" :
+                    essay.images.length === 3 ? "grid-cols-3" :
+                    "grid-cols-2 md:grid-cols-3"
+                  ]}
+                >
+                  {essay.images.map((src: string, idx: number) => (
+                    <div class="rounded-lg overflow-hidden bg-[var(--btn-card-bg-hover)]">
+                      <img
+                        src={src}
+                        alt={`瞬间图片 ${idx + 1}`}
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <!-- 底部信息 -->
+            <div class="essay-meta flex items-center justify-between text-sm text-75">
+              <div class="flex items-center gap-4">
+                <!-- 时间 -->
+                <div class="flex items-center gap-1">
+                  <Icon name="material-symbols:schedule" class="text-base" />
+                  <span>{essay.time}</span>
+                </div>
+
+                <!-- 标签 -->
+                {essay.tags.length > 0 && (
+                  <div class="flex items-center gap-2">
+                    <Icon name="material-symbols:tag" class="text-base" />
+                    <div class="flex gap-2">
+                      {essay.tags.map((t: string) => (
+                        <span class="px-2 py-1 bg-[var(--btn-card-bg-hover)] rounded-full text-xs">#{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- 评论区 -->
+  <div id="comments-section">
+    <Comment path="/memos/" />
+  </div>
+</MainGridLayout>
+
+<style>
+  .essay-item {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .essay-content {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+</style>

@@ -7,7 +7,7 @@
       <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="icon" href="https://www.fis.ink/img/logo_c.png" type="image/png"/>
+        <link rel="icon" href="https://img.314926.xyz/images/2025/09/20/zsx-avatar.webp" type="image/png"/>
 
         <title><xsl:value-of select="rss/channel/title"/> - RSS订阅</title>
         <style>

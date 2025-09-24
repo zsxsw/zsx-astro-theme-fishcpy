@@ -13,8 +13,8 @@ import type {
 // ----------------------------------------------------------
 
 export const siteConfig: SiteConfig = {
-	title: "fishcpy的小破站",
-	subtitle: "",
+	title: "ZSXの小站",
+	subtitle: "钟神秀的播客",
 	lang: "zh_CN", // 可选值: 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 260, // 主题色默认色调，取值范围0-360。例如红色:0，蓝绿色:200，青色:250，粉色:345
@@ -23,8 +23,8 @@ export const siteConfig: SiteConfig = {
 	theme: AUTO_MODE, // 主题模式: AUTO_MODE(默认), LIGHT_MODE(强制浅色), DARK_MODE(强制深色)
 	banner: {
 		enable: true,
-		type: "video", // 'image' 或 'video'，指定banner类型
-		src: "https://www.fis.ink/wj/video/mc.mp4", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
+		type: "image", // 'image' 或 'video'，指定banner类型
+		src: "/cover/1.png", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
 		//背景在src\layouts\Layout.astro中
 		position: "center", // 等同于CSS的object-position属性，仅支持'top','center','bottom'。默认为'center'
 		credit: {
@@ -35,13 +35,13 @@ export const siteConfig: SiteConfig = {
 		text: {
 			enable: true, // 是否在banner中显示文字
 			title: "Hello👋", // banner主标题
-			subtitle: "Welcome to my blog", // banner副标题
+			subtitle: "欢迎来到「钟神秀」の小站", // banner副标题
 		},
 	},
 	pageBackground: {
 		enable: true,
 		type: "image", // 'image' 或 'video'
-		src: "https://api.fis.ink/mc",
+		src: "/cover/4.jpg",
 		//https://www.fis.ink/wj/video/mc.mp4
 		//https://www.fis.ink/wj/video/xingjianya.mp4
 	},
@@ -55,7 +55,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// 保留空数组则使用默认favicon
 		{
-			src: "https://www.fis.ink/img/logo_c.png", // favicon路径，相对于/public目录
+			src: "https://img.314926.xyz/images/2025/09/20/zsx-avatar.webp", // favicon路径，相对于/public目录
 			//theme: 'light',              // (可选) 'light'或'dark'，仅在为浅色和深色模式设置了不同favicon时使用
 			//sizes: '32x32',              // (可选) favicon尺寸，仅在设置了不同尺寸的favicon时使用
 		},
@@ -93,25 +93,25 @@ export const navBarConfig: NavBarConfig = {
 				},
 			],
 		},
-		{
-			name: "其他",
-			url: "#",
-			icon: "fa6-solid:chart-line",
-			children: [
-				{
-					name: "服务监控",
-					url: "https://status.fishcpy.top/status/web",
-					external: true,
-					icon: "fa6-solid:chart-line",
-				},
-				{
-					name: "节点监控",
-					url: "https://node.fishcpy.top",
-					external: true,
-					icon: "fa6-solid:chart-line",
-				},
-			],
-		},
+		// {
+		// 	name: "其他",
+		// 	url: "#",
+		// 	icon: "fa6-solid:chart-line",
+		// 	children: [
+		// 		{
+		// 			name: "服务监控",
+		// 			url: "https://status.fishcpy.top/status/web",
+		// 			external: true,
+		// 			icon: "fa6-solid:chart-line",
+		// 		},
+		// 		{
+		// 			name: "节点监控",
+		// 			url: "https://node.fishcpy.top",
+		// 			external: true,
+		// 			icon: "fa6-solid:chart-line",
+		// 		},
+		// 	],
+		// },
 		{
 			name: "我的",
 			url: "#",
@@ -137,12 +137,12 @@ export const navBarConfig: NavBarConfig = {
 					url: "/about/",
 					icon: "fa6-solid:user",
 				},
-				{
-					name: "主页",
-					url: "https://www.fis.ink",
-					external: true,
-					icon: "material-symbols:home",
-				},
+				// {
+				// 	name: "主页",
+				// 	url: "https://www.fis.ink",
+				// 	external: true,
+				// 	icon: "material-symbols:home",
+				// },
 			],
 		},
 	],
@@ -166,9 +166,9 @@ export const navBarConfig: NavBarConfig = {
 // ----------------------------------------------------------
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://www.fis.ink/img/logo.png", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
-	name: "fishcpy",
-	bio: "非淡泊无以明志，非宁静无以致远",
+	avatar: "https://img.314926.xyz/images/2025/09/20/zsx-avatar.webp", // 相对于/src目录的路径。如果以'/'开头则表示相对于/public目录
+	name: "「钟神秀」",
+	bio: "造化钟神秀，阴阳割昏晓~",
 	links: [
 		{
 			name: "Rss",
@@ -178,16 +178,31 @@ export const profileConfig: ProfileConfig = {
 			// `pnpm add @iconify-json/<icon-set-name>`
 			url: "/rss.xml",
 		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://steamcommunity.com/id/fishcpy",
-		},
+		// {
+		// 	name: "Steam",
+		// 	icon: "fa6-brands:steam",
+		// 	url: "https://steamcommunity.com/id/fishcpy",
+		// },
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/fishcpy",
+			url: "https://github.com/zsxsw",
 		},
+			{
+			name: "Telegram",
+			icon: "fa6-brands:telegram",
+			url: "https://t.me/zhzsx_me",
+		},
+		{
+			name: "QQ",
+			icon: "fa6-brands:qq",
+			url: "https://qm.qq.com/q/6SICgaZ5kY",
+		},
+		{
+			name: "邮箱",
+			icon: "fa6-solid:envelope",
+			url: "mailto:zsx@zhzsx.cn",
+		}
 	],
 	showStats: true, // 统计信息总开关
 	statsConfig: {
@@ -217,16 +232,16 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const commentConfig: CommentConfig = {
 	enable: true,
-	type: "artalk",
+	type: "twikoo",
 	twikoo: {
 		envId:
-			"https://fishcpy-cloud-twkioo-1-2-3-4-5-6-7-8-9-10-11-12-13.fis.ink/",
+			"https://twikoo-v1.zhzsx.cn/",
 	},
-	artalk: {
-		server: "https://artalk.fis.ink",
-		site: "astro-theme-fishcpy",
-		darkMode: false, // 强制浅色模式，不跟随浏览器主题
-	},
+	// artalk: {
+	// 	server: "https://artalk.fis.ink",
+	// 	site: "astro-theme-fishcpy",
+	// 	darkMode: false, // 强制浅色模式，不跟随浏览器主题
+	// },
 };
 
 // ----------------------------------------------------------
@@ -320,7 +335,7 @@ export const beautifyConfig: BeautifyConfig = {
 
 // 鼠标样式配置
 export const cursorConfig = {
-	overrideDefault: true, // 是否覆盖访问者系统默认鼠标样式 (false=尊重用户设置, true=强制覆盖)
+	overrideDefault: false, // 是否覆盖访问者系统默认鼠标样式 (false=尊重用户设置, true=强制覆盖)
 };
 
 // 使用说明：
@@ -340,8 +355,8 @@ export const sidebarConfig: SidebarConfig = {
 		advertisement: true, // 广告卡片
 	},
 	advertisement: {
-		src: "https://cdn.fis.ink/img/2025/04/19/680346cf235f8.png", // 广告图片链接
-		url: "https://cloud.zyidc.net/aff/MYIMKXBB", // 广告跳转链接
+		src: "https://imgbed.kemeow.top/file/img/logo/nav/JBsnx5mY.png", // 广告图片链接
+		url: "https://www.shengdaoyun.cn/", // 广告跳转链接
 		alt: "广告", // 图片alt文本
 		showLabel: true, // 是否显示广告标识
 		labelText: "广告", // 广告标识文本
