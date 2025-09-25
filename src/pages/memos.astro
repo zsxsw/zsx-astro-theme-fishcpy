@@ -8,7 +8,7 @@ import { marked } from "marked";
 
 /* ===== 1. 拉取数据 ===== */
 const EDIT_URL = "https://github.com/zsxsw/github-issues-moments/issues/1";
-const API = "https://github-api.zhzsx.cn/api/comments";
+const API      = "https://github-api.zhzsx.cn/api/comments";
 
 let essays: any[] = [];
 try {
@@ -18,11 +18,9 @@ try {
 
   essays = list
     .map((raw) => ({
-      id: raw.id,
-      content: marked(raw.body || ""),
-      time: new Date(raw.created_at).toLocaleString("zh-CN"),
-      images:
-        (raw.body || "").match(/(https?:\/\/\S+\.(jpg|jpeg|png|gif|webp|svg))/gi) || [],
+      id:      raw.id,
+      content: marked(raw.body || ""), // ✅ 全部交给 marked 渲染（含图片）
+      time:    new Date(raw.created_at).toLocaleString("zh-CN"),
       tags:
         (raw.body || "").match(/#(\S+)/g)?.map((t: string) => t.slice(1)) || [],
     }))
@@ -31,7 +29,6 @@ try {
   console.error("[essay] 拉取评论失败", e);
 }
 
-/* ===== 2. 评论区用到的 mockPost ===== */
 const mockPost = { slug: "essay", data: { title: "微语" } };
 ---
 
@@ -64,54 +61,22 @@ const mockPost = { slug: "essay", data: { title: "微语" } };
       <div class="space-y-6">
         {essays.map((essay) => (
           <div class="essay-item bg-[var(--card-bg)] rounded-lg p-6 shadow-sm border border-[var(--line-divider)] transition-all hover:shadow-md">
-            {/* 文字 */}
+            <!-- ✅ 正文（含图片）全部由 marked 一次性渲染 -->
             <div
-              class="essay-content text-90 text-lg leading-relaxed mb-4"
+              class="essay-content text-lg leading-relaxed mb-4"
               set:html={essay.content}
             />
 
-            {/* 图片 */}
-            {essay.images.length > 0 && (
-              <div class="essay-images mb-4">
-                <div
-                  class:list={[
-                    "custom-md grid gap-3",
-                    essay.images.length === 1
-                      ? "grid-cols-1"
-                      : essay.images.length === 2
-                      ? "grid-cols-2"
-                      : essay.images.length === 3
-                      ? "grid-cols-3"
-                      : "grid-cols-2 md:grid-cols-3",
-                  ]}
-                >
-                  {essay.images.map((src: string, idx: number) => (
-                    <div class="rounded-lg overflow-hidden bg-[var(--btn-card-bg-hover)]">
-                      <img
-                        src={src}
-                        alt={`瞬间图片 ${idx + 1}`}
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* 底部信息 */}
+            <!-- 底部信息 -->
             <div class="essay-meta flex items-center justify-between text-sm text-75">
               <div class="flex items-center gap-4">
-                {/* 时间 */}
+                <!-- 时间 -->
                 <div class="flex items-center gap-1">
-                  <Icon
-                    name="material-symbols:schedule"
-                    class="text-base"
-                  />
+                  <Icon name="material-symbols:schedule" class="text-base" />
                   <span>{essay.time}</span>
                 </div>
 
-                {/* 标签 */}
+                <!-- 标签 -->
                 {essay.tags.length > 0 && (
                   <div class="flex items-center gap-2">
                     <Icon name="material-symbols:tag" class="text-base" />
@@ -138,6 +103,14 @@ const mockPost = { slug: "essay", data: { title: "微语" } };
   </div>
 </MainGridLayout>
 
+<!-- ✅ medium-zoom 统一给 .essay-content img 加点击放大 -->
+<script>
+  import mediumZoom from 'medium-zoom';
+  mediumZoom('.essay-content img', {
+    background: 'rgba(0,0,0,0.6)', // 可按主题变量调整
+  });
+</script>
+
 <style>
   .essay-item {
     animation: fadeInUp 0.6s ease-out;
@@ -155,5 +128,9 @@ const mockPost = { slug: "essay", data: { title: "微语" } };
   .essay-content {
     word-wrap: break-word;
     white-space: pre-wrap;
+  }
+  /* ✅ 给 marked 渲染出的图片加一点默认圆角与间距 */
+  .essay-content img {
+    @apply rounded-lg mt-3 mb-3 cursor-pointer;
   }
 </style>
