@@ -26,11 +26,14 @@ import { LinkCardComponent } from "./src/plugins/rehype-component-link-card.mjs"
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://blog.fis.ink/",
+	site: "https://blog-v3.zhzsx.cn/",
 	base: "/",
+  	output: 'server',
+  	adapter: vercel(),
 	trailingSlash: "always",
 
 	integrations: [
